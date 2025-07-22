@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 3% 12%;
+    --foreground: 0 0% 100%;
+    
+    --card: 240 10% 16%;
+    --card-foreground: 0 0% 100%;
+    
+    --popover: 240 10% 16%;
+    --popover-foreground: 0 0% 100%;
+    
+    --primary: 211 100% 52%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 184 100% 80%;
+    --secondary-foreground: 0 0% 0%;
+    
+    --muted: 240 5% 25%;
+    --muted-foreground: 0 0% 80%;
+    
+    --accent: 45 100% 50%;
+    --accent-foreground: 0 0% 0%;
+    
+    --destructive: 0 100% 62%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 240 5% 26%;
+    --input: 240 5% 26%;
+    --ring: 184 100% 50%;
+    
+    --chart-1: 211 100% 52%;
+    --chart-2: 184 100% 50%;
+    --chart-3: 45 100% 50%;
+    --chart-4: 196 64% 54%;
+    --chart-5: 0 100% 62%;
+    
+    --radius: 0.5rem;
+    
+    --sidebar-background: 240 3% 12%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 211 100% 52%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 184 100% 50%;
+    --sidebar-accent-foreground: 0 0% 0%;
+    --sidebar-border: 240 5% 26%;
+    --sidebar-ring: 184 100% 50%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-rajdhani;
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-background;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-secondary/50 rounded;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-secondary/80;
+  }
+}
+
+@layer components {
+  .glow {
+    box-shadow: 0 0 10px rgba(0, 242, 254, 0.5), 0 0 20px rgba(0, 242, 254, 0.2);
+  }
+  
+  .glow-text {
+    text-shadow: 0 0 10px rgba(0, 242, 254, 0.7);
+  }
+  
+  .holographic-panel {
+    @apply bg-gradient-to-br from-primary/10 to-secondary/10 backdrop-blur-md border border-secondary/30 rounded-xl;
+  }
+  
+  .stat-progress {
+    @apply bg-gradient-to-r from-primary to-secondary;
+  }
+  
+  .achievement-glow {
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.5), 0 0 25px rgba(255, 215, 0, 0.2);
+  }
+  
+  .pulse-effect {
+    animation: pulse 2s infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(0, 242, 254, 0.7);
+    }
+    70% {
+      box-shadow: 0 0 0 10px rgba(0, 242, 254, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(0, 242, 254, 0);
+    }
+  }
+  
+  .level-ring-bg {
+    @apply rounded-full;
+    background: conic-gradient(transparent 0%, transparent 25%, hsl(var(--muted)) 25%, hsl(var(--muted)) 100%);
+  }
+  
+  .level-ring {
+    @apply rounded-full;
+    background: conic-gradient(hsl(var(--secondary)) 0%, hsl(var(--secondary)) var(--percent), transparent var(--percent), transparent 100%);
+  }
+  
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  .font-rajdhani {
+    font-family: 'Rajdhani', sans-serif;
+  }
+  
+  .font-roboto-mono {
+    font-family: 'Roboto Mono', monospace;
+  }
+}
