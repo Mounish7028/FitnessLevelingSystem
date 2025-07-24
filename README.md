@@ -53,9 +53,5 @@ A cutting-edge fitness application inspired by the Solo Leveling anime/manhwa, t
 - Garmin: Monitor distance, pace, and workout intensity
 - Manual Entry: Log exercises manually if you do not have a wearable device
 
-## 📄 License
 
-This project is licensed under the MIT License
-
-"I will not stay down here forever." - Sung Jin-Woo
 
